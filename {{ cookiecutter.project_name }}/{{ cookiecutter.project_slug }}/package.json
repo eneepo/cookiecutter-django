@@ -1,0 +1,27 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "{{ cookiecutter.version }}",
+  "description": "{{ cookiecutter.project_short_description }}",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp generate-assets"
+  },
+  "author": "{{ cookiecutter.author_name }}",
+  "license": "{{ cookiecutter.open_source_license }}",
+  "devDependencies": {
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.5",
+    "del": "^4.1.1",
+    "gulp": "^4.0.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "^4.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-svg-sprite": "^1.5.0",
+    "gulp-uglify-es": "^1.0.4",
+    "jquery": "^3.4.0",
+    "popper.js": "^1.15.0"
+  }
+}

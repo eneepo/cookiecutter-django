@@ -18,10 +18,10 @@ sys.path.insert(0, os.path.abspath('../../{{ cookiecutter.project_slug }}'))
 # -- Project information -----------------------------------------------------
 
 project = '{{ cookiecutter.project_name }}'
-copyright = """{% now 'utc', '%Y' %}, {{ cookiecutter.full_name }}"""
-author = '{{ cookiecutter.full_name }}'
+copyright = """{% now 'utc', '%Y' %}, {{ cookiecutter.author_name }}"""
+author = '{{ cookiecutter.author_name }}'
 # The full version, including alpha/beta/rc tags
-release = '0.0.1'
+release = '{{ cookiecutter.version }}'
 
 
 # -- General configuration ---------------------------------------------------
