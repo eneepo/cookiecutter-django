@@ -73,3 +73,6 @@ echo
 
 echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
+
+echo "### Setting prmissions ..."
+chown -R $USER ./containers/docker/certbot -R
