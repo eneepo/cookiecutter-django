@@ -20,7 +20,7 @@ ACCOUNT_ADAPTER = 'components.users.account_adapter.NoNewUsersAccountAdapter'
 
 
 # Password validation
-# https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/{{ cookiecutter.django_version }}/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {

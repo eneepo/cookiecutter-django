@@ -8,5 +8,6 @@
   "email": "admin{{ cookiecutter.domain_name }}",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
-  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
+  "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"],
+  "django_version": ["2.2", "2.1", "2.0"]
 }
