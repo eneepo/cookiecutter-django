@@ -25,4 +25,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 EXPOSE 8000
 
 # define the default command to run when starting the container
-CMD ["gunicorn", "--bind", ":8000", "{{ cookiecutter.project_slug }}.wsgi:application"]
+CMD ["gunicorn", "--chdir ", {{ cookiecutter.project_slug }},"--bind", ":8000", "{{ cookiecutter.project_slug }}.wsgi:application"]
