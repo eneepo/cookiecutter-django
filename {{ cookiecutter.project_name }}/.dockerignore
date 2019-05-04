@@ -221,4 +221,4 @@ fabric.properties
 .idea/httpRequests
 
 # Local project files
-website/settings/environments/local.py
+website/settings/environments/temp.py

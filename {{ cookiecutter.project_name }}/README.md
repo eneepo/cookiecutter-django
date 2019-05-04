@@ -27,6 +27,26 @@ $ gulp watch
 # Watch for changes, build and serve static files
 $ gulp serve
 ```
+## Containers
+### Docker
+Build a single docker image
+``` shell
+$ docker build -f containers/docker/django/Dockerfile .
+```
+### Compose
+
+``` shell
+$ docker-compose -f containers/compose/development.yml up
+```
+To force rebuilding the image
+``` shell
+$ docker-compose -f containers/compose/development.yml up --build
+```
+Because `COMPOSE_FILE` has been set in the `.env` file you don't need to use `-f`
+switch for the production
+``` shell
+$ docker-compose up --build
+```
 
 ## Documentation
 Generate documentation

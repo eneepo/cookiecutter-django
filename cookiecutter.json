@@ -1,10 +1,11 @@
 {
   "author_name": "Eneepo",
-  "email": "me@eneepo.com",
   "github_username": "eneepo",
   "project_name": "Django Boilerplate",
   "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
   "project_short_description": "Django Boilerplate contains all the boilerplate you need to create a Django application.",
+  "domain_name": "eneepo.com",
+  "email": "admin{{ cookiecutter.domain_name }}",
   "pypi_username": "{{ cookiecutter.github_username }}",
   "version": "0.0.1",
   "open_source_license": ["MIT license", "BSD license", "ISC license", "Apache Software License 2.0", "GNU General Public License v3", "Not open source"]
