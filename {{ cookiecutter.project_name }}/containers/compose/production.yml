@@ -8,7 +8,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - box-prod-postgres-data:/var/lib/postgresql/data/
+      - {{ cookiecutter.project_slug }}-prod-postgres-data:/var/lib/postgresql/data/
 
   redis:
     restart: always
@@ -16,20 +16,20 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - box-prod-redis-data:/data
+      - {{ cookiecutter.project_slug }}-prod-redis-data:/data
 
   django:
     build:
       context: ../..
       dockerfile: ./containers/docker/production/django/Dockerfile
-    command: /usr/local/bin/gunicorn box.wsgi:application -w 2 -b :8000
+    command: /usr/local/bin/gunicorn {{ cookiecutter.project_slug }}.wsgi:application -w 2 -b :8000
     env_file: ../../.env
     environment:
       DJANGO_ENV: development
     volumes:
-      - box-prod-django-data:/code
-      - box-prod-django-static:/box/static/
-      - box-prod-django-media:/box/media/
+      - {{ cookiecutter.project_slug }}-prod-django-data:/code
+      - {{ cookiecutter.project_slug }}-prod-django-static:/{{ cookiecutter.project_slug }}/static/
+      - {{ cookiecutter.project_slug }}-prod-django-media:/{{ cookiecutter.project_slug }}/media/
     depends_on:
       - postgres
       - redis
@@ -49,14 +49,14 @@ services:
       - ../docker/production/nginx/config/nginx/conf.d:/etc/nginx/conf.d
       - ../docker/production/certbot/conf:/etc/letsencrypt
       - ../docker/production/certbot/www:/var/www/certbot
-      - box-prod-django-static:/box/static/
-      - box-prod-django-media:/box/media/
+      - {{ cookiecutter.project_slug }}-prod-django-static:/{{ cookiecutter.project_slug }}/static/
+      - {{ cookiecutter.project_slug }}-prod-django-media:/{{ cookiecutter.project_slug }}/media/
     depends_on:
       - django
 
 volumes:
-  box-prod-django-data:
-  box-prod-django-static:
-  box-prod-django-media:
-  box-prod-redis-data:
-  box-prod-postgres-data:
+  {{ cookiecutter.project_slug }}-prod-django-data:
+  {{ cookiecutter.project_slug }}-prod-django-static:
+  {{ cookiecutter.project_slug }}-prod-django-media:
+  {{ cookiecutter.project_slug }}-prod-redis-data:
+  {{ cookiecutter.project_slug }}-prod-postgres-data:
