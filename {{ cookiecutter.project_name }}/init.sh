@@ -2,7 +2,7 @@
 
 domains=({{ cookiecutter.domain_name }} www.{{ cookiecutter.domain_name }})
 rsa_key_size=4096
-data_path="./containers/docker/certbot"
+data_path="./containers/docker/production/certbot"
 email="{{ cookiecutter.email }}" # Adding a valid address is strongly recommended
 staging=0 # Set to 1 if you're testing your setup to avoid hitting request limits
 
@@ -75,4 +75,4 @@ echo "### Reloading nginx ..."
 docker-compose exec nginx nginx -s reload
 
 echo "### Setting prmissions ..."
-chown -R $USER ./containers/docker/certbot -R
+chown -R $USER ./containers/docker/production/certbot -R
