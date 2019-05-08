@@ -21,7 +21,7 @@ services:
   django:
     build:
       context: ../..
-      dockerfile: ./containers/docker/django/Dockerfile
+      dockerfile: ./containers/docker/production/django/Dockerfile
     command: /usr/local/bin/gunicorn box.wsgi:application -w 2 -b :8000
     env_file: ../../.env
     environment:
@@ -37,8 +37,8 @@ services:
   certbot:
     image: certbot/certbot
     volumes:
-      - ../docker/certbot/conf:/etc/letsencrypt
-      - ../docker/certbot/www:/var/www/certbot
+      - ../docker/production/certbot/conf:/etc/letsencrypt
+      - ../docker/production/certbot/www:/var/www/certbot
 
   nginx:
     image: nginx:1.13
@@ -46,9 +46,9 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ../docker/nginx/config/nginx/conf.d:/etc/nginx/conf.d
-      - ../docker/certbot/conf:/etc/letsencrypt
-      - ../docker/certbot/www:/var/www/certbot
+      - ../docker/production/nginx/config/nginx/conf.d:/etc/nginx/conf.d
+      - ../docker/production/certbot/conf:/etc/letsencrypt
+      - ../docker/production/certbot/www:/var/www/certbot
       - box-prod-django-static:/box/static/
       - box-prod-django-media:/box/media/
     depends_on:
