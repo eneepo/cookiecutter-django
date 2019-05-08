@@ -1,11 +1,6 @@
 # Pull base image
 FROM python:3.6
 
-# Install Python and Package Libraries
-RUN apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
-RUN apt-get install -y \
-    libjpeg-dev
-
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -25,4 +20,4 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 EXPOSE 8000
 
 # define the default command to run when starting the container
-CMD ["gunicorn", "--chdir ", {{ cookiecutter.project_slug }},"--bind", ":8000", "{{ cookiecutter.project_slug }}.wsgi:application"]
+CMD ["gunicorn", "--chdir ", "/code/{{ cookiecutter.project_slug }}", "--bind", ":8000", "{{ cookiecutter.project_slug }}.wsgi:application"]
