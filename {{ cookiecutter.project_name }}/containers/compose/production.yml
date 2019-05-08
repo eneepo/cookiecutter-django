@@ -46,7 +46,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ../docker/production/nginx/config/nginx/conf.d:/etc/nginx/conf.d
+      - ../docker/production/nginx/conf.d:/etc/nginx/conf.d
       - ../docker/production/certbot/conf:/etc/letsencrypt
       - ../docker/production/certbot/www:/var/www/certbot
       - {{ cookiecutter.project_slug }}-prod-django-static:/{{ cookiecutter.project_slug }}/static/
