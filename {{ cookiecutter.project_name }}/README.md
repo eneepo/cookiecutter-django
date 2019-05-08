@@ -1,6 +1,15 @@
 # {{ cookiecutter.project_name }}
 
 {{ cookiecutter.project_short_description }}
+## Secret Key
+Generate Secret Key
+``` shell
+$ python -c """import random; key=''.join([random.choice('abcdefghijklmnopqrstuvwxyz0123456789%^&*(-_=+)') for i in range(50)]); print('SECRET_KEY=\'{}\''.format(key))""" >> .env
+```
+Set environment variables from `.env` file
+``` shell
+$ source .env  
+```
 
 ## Asset Management
 Assets directory is located at `{{ cookiecutter.project_name }}/{{ cookiecutter.project_slug }}/assets`
