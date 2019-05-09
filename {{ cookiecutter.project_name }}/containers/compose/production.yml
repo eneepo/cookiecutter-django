@@ -25,7 +25,7 @@ services:
     command: /usr/local/bin/gunicorn {{ cookiecutter.project_slug }}.wsgi:application -w 2 -b :8000
     env_file: ../../.env
     environment:
-      DJANGO_ENV: development
+      DJANGO_ENV: production
     volumes:
       - {{ cookiecutter.project_slug }}-prod-django-data:/code
       - {{ cookiecutter.project_slug }}-prod-django-static:/{{ cookiecutter.project_slug }}/static/

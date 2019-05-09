@@ -21,6 +21,7 @@ base_settings = [
     'components/database.py',  # postgres
     'components/i18n.py',  # postgres
     'components/email.py',
+    'components/logging.py',
     'components/security.py',
     'components/template.py',
 
