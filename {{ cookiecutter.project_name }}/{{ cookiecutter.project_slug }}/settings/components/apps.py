@@ -7,8 +7,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
 
-    {%- if cookiecutter.use_wagtail == "y" %}
+    {% if cookiecutter.use_wagtail == "y" %}
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',

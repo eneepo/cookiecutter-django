@@ -24,6 +24,7 @@ base_settings = [
     'components/logging.py',
     'components/security.py',
     'components/template.py',
+    'components/cms.py',
 
     # Select the right env:
     'environments/%s.py' % ENV,

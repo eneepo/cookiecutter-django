@@ -14,7 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+
+{%- if cookiecutter.use_wagtail == "y" %}
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.core import urls as wagtail_urls
+{%- endif %}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -22,7 +28,7 @@ urlpatterns = [
     {%- if cookiecutter.use_wagtail == "y" %}
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
-    path('magazine/', include(wagtail_urls)),
+    path('', include(wagtail_urls)),
     {%- endif %}
 
 ]

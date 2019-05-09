@@ -26,5 +26,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = '{{ cookiecutter.project_slug }}.urls'
 
+SITE_ID = 1
 
 WSGI_APPLICATION = '{{ cookiecutter.project_slug }}.wsgi.application'

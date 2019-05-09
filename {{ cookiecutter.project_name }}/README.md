@@ -8,7 +8,7 @@ $ python -c """import random; key=''.join([random.choice('abcdefghijklmnopqrstuv
 ```
 Set environment variables from `.env` file
 ``` shell
-$ source .env  
+$ set -o allexport; source .env; set +o allexport
 ```
 
 ## Asset Management
