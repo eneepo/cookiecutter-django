@@ -17,6 +17,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    {%- if cookiecutter.use_wagtail == "y" %}
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
+    {%- endif %}
 ]
 
 ROOT_URLCONF = '{{ cookiecutter.project_slug }}.urls'

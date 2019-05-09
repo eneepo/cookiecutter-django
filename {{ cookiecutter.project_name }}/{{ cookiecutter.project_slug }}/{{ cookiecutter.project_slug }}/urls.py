@@ -18,4 +18,11 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    {%- if cookiecutter.use_wagtail == "y" %}
+    path('cms/', include(wagtailadmin_urls)),
+    path('documents/', include(wagtaildocs_urls)),
+    path('magazine/', include(wagtail_urls)),
+    {%- endif %}
+
 ]
