@@ -25,6 +25,7 @@ base_settings = [
     'components/security.py',
     'components/template.py',
     'components/cms.py',
+    'components/search.py',
 
     # Select the right env:
     'environments/%s.py' % ENV,

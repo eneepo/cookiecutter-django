@@ -22,12 +22,6 @@ MIDDLEWARE = [
     'wagtail.core.middleware.SiteMiddleware',
     'wagtail.contrib.redirects.middleware.RedirectMiddleware',
     {%- endif %}
-
-    {%- if cookiecutter.use_oscar == "y" %}
-    'oscar.apps.basket.middleware.BasketMiddleware',
-    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
-    {%- endif %}
-
 ]
 
 ROOT_URLCONF = '{{ cookiecutter.project_slug }}.urls'

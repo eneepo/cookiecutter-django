@@ -1,7 +1,4 @@
 # Application definition
-{%- if cookiecutter.use_oscar == "y" %}
-from oscar import get_core_apps
-{%- endif %}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -29,12 +26,4 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     {%- endif %}
-
-    {%- if cookiecutter.use_wagtail == "y" and cookiecutter.use_oscar == "y" and %}
-    'oscar_wagtail',
-    {%- endif %}
 ]
-
-{%- if cookiecutter.use_oscar == "y" %}
- + get_core_apps()
-{%- endif %}
